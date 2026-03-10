@@ -1,0 +1,120 @@
+:root {
+  /* Premium Dark Theme */
+  --bg-primary: #0a0b10;
+  --bg-secondary: #131720;
+  --bg-tertiary: #1c212c;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-primary: #f97316;
+  --accent-hover: #ea580c;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(19, 23, 32, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+[data-theme='light'] {
+  --bg-primary: #f9fafb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --accent-primary: #f97316;
+  /* Keep orange as brand color */
+  --accent-hover: #ea580c;
+  --border-color: #e5e7eb;
+  --glass-bg: #ffffff;
+  --glass-border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+// Utility Classes
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  &.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, #ff5e00 100%);
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(249, 115, 22, 0.39);
+
+    &:hover {
+      background: linear-gradient(135deg, var(--accent-hover) 0%, #e65400 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0;
+  }
+  
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .stack-on-mobile {
+    flex-direction: column !important;
+  }
+}
