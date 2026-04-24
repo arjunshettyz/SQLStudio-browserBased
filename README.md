@@ -1,4 +1,4 @@
-# 🚀 CipherSQLStudio
+# SQLStudio
 
 **CipherSQLStudio** is a secure, interactive SQL playground designed to help beginners and developers master SQL. Think of it as a "LeetCode for SQL" where you can write queries, execute them against a real database, and get instant feedback with AI-powered hints.
 
